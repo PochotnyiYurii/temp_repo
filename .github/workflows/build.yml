@@ -1,0 +1,37 @@
+name: Build macOS App
+
+on:
+  push:
+    branches:
+      - main  # или ваша ветка
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'  # или версия, которую вы используете
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install py2app
+
+      - name: Build macOS app
+        run: |
+          python setup.py py2app
+          
+      - name: Upload macOS app
+        uses: actions/upload-artifact@v2
+        with:
+          name: real_love_app
+          path: dist/*.app
