@@ -1,6 +1,6 @@
 from setuptools import setup
 
-APP = ['your_app.py']
+APP = ['real_love.py']
 DATA_FILES = []
 OPTIONS = {
     'argv_emulation': True,
