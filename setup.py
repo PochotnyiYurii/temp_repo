@@ -4,7 +4,8 @@ APP = ['real_love.py']
 DATA_FILES = []
 OPTIONS = {
     'argv_emulation': True,
-    'packages': ['required_package'],
+    'packages': ['tkinter'],  # Добавьте все необходимые библиотеки
+    'excludes': ['required_package']  # Добавьте модули, которые не обязательны
 }
 
 setup(
