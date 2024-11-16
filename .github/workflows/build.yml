@@ -27,9 +27,9 @@ jobs:
       - name: Build macOS app
         run: |
           python setup.py py2app
-          
+
       - name: Upload macOS app
         uses: actions/upload-artifact@v3  # Новая версия
         with:
           name: real_love_app
-          path: dist/*.app
+          path: dist/*.app  # Указываем путь к вашему приложению в dist

@@ -4,8 +4,13 @@ APP = ['real_love.py']
 DATA_FILES = []
 OPTIONS = {
     'argv_emulation': True,
-    'packages': ['tkinter'],  # Добавьте все необходимые библиотеки
-    'excludes': ['required_package']  # Добавьте модули, которые не обязательны
+    'packages': ['tkinter'],  # Убедитесь, что Tkinter указан правильно
+    'excludes': ['required_package'],  # Убедитесь, что лишние пакеты исключены
+    'plist': {
+        'CFBundleIdentifier': 'com.example.realloveapp',  # Уникальный идентификатор
+        'CFBundleName': 'Real Love App',
+        'CFBundleVersion': '1.0',
+    }
 }
 
 setup(
