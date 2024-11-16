@@ -3,8 +3,8 @@ name: Build macOS App
 on:
   push:
     branches:
-      - master  # Это будет запускать workflow при push в ветку main
-  workflow_dispatch:  # Это добавит кнопку для ручного запуска
+      - master  # Запуск при push в ветку main
+  workflow_dispatch:  # Возможность запускать вручную
 
 jobs:
   build:
@@ -29,7 +29,7 @@ jobs:
           python setup.py py2app
           
       - name: Upload macOS app
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Новая версия
         with:
           name: real_love_app
           path: dist/*.app
