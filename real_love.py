@@ -88,3 +88,5 @@ button_no = tk.Button(window, text="Нет", command=button_no_in_first_window, 
 button_no.pack(side=tk.RIGHT, padx=20)
 
 window.mainloop()
+
+# push to creating .app file
