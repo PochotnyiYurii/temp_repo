@@ -3,23 +3,21 @@ name: Build macOS App
 on:
   push:
     branches:
-      - main  # или ваша ветка
-  pull_request:
-    branches:
-      - main
+      - master  # Это будет запускать workflow при push в ветку main
+  workflow_dispatch:  # Это добавит кнопку для ручного запуска
 
 jobs:
   build:
     runs-on: macos-latest
 
     steps:
-      - name: Check out the repository
+      - name: Check out repository
         uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'  # или версия, которую вы используете
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
